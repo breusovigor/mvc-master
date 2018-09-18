@@ -21,8 +21,8 @@ class SearchController extends Controller
 
     public function actionIndex() {
         try {
-            if (isset($_GET['blog-search'])) {
-                $this->view->searchResult = $this->searchModel->getSearchNews($_GET['blog-search']);
+            if (isset($_POST['blog-search'])) {
+                $this->view->searchResult = $this->searchModel->getSearchNews($_POST['blog-search']);
                 $this->view->categories = $this->categoriesModel->getCategories();
                 $this->view->lastNews = $this->newsModel->getLastNews();
                 $result = true;

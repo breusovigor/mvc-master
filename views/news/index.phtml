@@ -18,8 +18,7 @@
                         <div class="meta-item">
                             <div class="meta-title published">Дата:</div>
                             <a href="#">
-                            <? $this->getRusDate($news['news_date']); // $new_datetime = DateTime::createFromFormat ( "Y-m-d H:i:s", $news['news_date']);
-                            //echo $new_datetime->format('d F Y');
+                            <? $this->getRusDate($news['news_date']);
                             ?>
                             </a>
                         </div>
@@ -72,7 +71,7 @@
                 <!-- Title -->
                 <h3>Поиск по сайту</h3>
                 <!-- Search Form -->
-                <form name="blog-search" method="get" action="/search/">
+                <form name="blog-search" method="post" action="/search/">
                     <div class="container">
                         <!-- Textbox -->
                         <input type="text" id="blog-search" name="blog-search" placeholder="Искать">
