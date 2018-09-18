@@ -9,7 +9,6 @@
 
             <!-- Blog Post -->
             <? foreach ($this->searchResult as $searchResult) : ?>
-
                 <div class="blog-post">
                     <!-- Title -->
                     <h1><a href="/news/<?= $searchResult['cat_code']?>/<?= $searchResult['news_code']?>"><?= $searchResult['news_title'] ?></a></h1>
@@ -70,7 +69,7 @@
                 <!-- Title -->
                 <h3>Поиск по сайту</h3>
                 <!-- Search Form -->
-                <form name="blog-search" method="get" action="/search">
+                <form name="blog-search" method="get" action="/search/">
                     <div class="container">
                         <!-- Textbox -->
                         <input type="text" id="blog-search" name="blog-search" placeholder="Искать">
@@ -114,8 +113,7 @@
                             <!-- Post Title -->
                             <h3 class="sub-title"><a href="/news/<?= $news['cat_code']?>/<?= $news['news_code']?>"><?= $news['news_title']?></a></h3>
                             <!-- Date -->
-                            <div class="date"><? $this->getRusDate($news['news_date']); //$new_datetime = DateTime::createFromFormat ( "Y-m-d H:i:s", $news['news_date']);
-                                //echo $new_datetime->format('d F Y') ?></div>
+                            <div class="date"><? $this->getRusDate($news['news_date']);?></div>
                         </div>
                     </div>
                 <? endforeach; ?>

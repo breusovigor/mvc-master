@@ -25,10 +25,10 @@ class NewsController extends Controller {
                 $result = $this->newsModel->getCategoryNews($category);
             }
 
-            $lastNews = $this->newsModel->getLastNews();
+            //$lastNews = $this->newsModel->getLastNews();
 
             $this->view->news = $result;
-            $this->view->lastNews = $lastNews;
+            $this->view->lastNews = $this->newsModel->getLastNews();
             $this->view->categories = $this->categoriesModel->getCategories();
 
             $this->view->generate('template_view.phtml', 'news/index.phtml');
